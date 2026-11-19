@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ferran Serafini Murio // CV</title>
-<meta name="description" content="Ferran Serafini Murio — Cyber Security Manager. Currículum interactivo.">
+<meta name="description" content="Ferran Serafini Murio — Cyber Security Manager. Interactive résumé.">
 <meta name="theme-color" content="#05060d">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -193,8 +193,8 @@ footer b{color:var(--magenta)}
           <div class="role" id="role"></div>
           <div class="line"><span class="d" id="tagline"></span></div>
           <div class="cta">
-            <a class="btn" href="#experience">&gt; ver_trayectoria</a>
-            <a class="btn m" href="#contact">&gt; contactar</a>
+            <a class="btn" href="#experience">&gt; view_experience</a>
+            <a class="btn m" href="#contact">&gt; contact_me</a>
           </div>
         </div>
       </div>
@@ -231,7 +231,7 @@ footer b{color:var(--magenta)}
     <div class="links" id="linksBox"></div>
 
     <div class="card shell">
-      <div class="out" id="shOut"><div class="line"><span class="d">Escribe <span class="c">help</span> para ver comandos disponibles.</span></div></div>
+      <div class="out" id="shOut"><div class="line"><span class="d">Type <span class="c">help</span> to list available commands.</span></div></div>
       <form id="shForm" autocomplete="off">
         <span class="prompt">guest<span>@</span>ferran:~$</span>
         <input id="shIn" type="text" spellcheck="false" aria-label="terminal">
@@ -241,92 +241,92 @@ footer b{color:var(--magenta)}
 </main>
 
 <footer>
-  <div>&lt;/&gt; hecho a mano con <b>♥</b> y demasiada cafeína · <span id="year"></span></div>
-  <div style="margin-top:6px">sistema online · todos los sistemas operativos <span style="color:var(--green)">●</span></div>
+  <div>&lt;/&gt; handmade with <b>♥</b> and too much caffeine · <span id="year"></span></div>
+  <div style="margin-top:6px">system online · all systems operational <span style="color:var(--green)">●</span></div>
 </footer>
 
-<noscript><p style="position:relative;z-index:3;padding:20px;color:#ff3b5c">Esta web necesita JavaScript para mostrar el contenido.</p></noscript>
+<noscript><p style="position:relative;z-index:3;padding:20px;color:#ff3b5c">This site needs JavaScript to display its content.</p></noscript>
 
 <script>
 /* =========================================================
-   >>> EDITA SOLO ESTE BLOQUE CON TUS DATOS <<<
+   >>> EDIT ONLY THIS BLOCK WITH YOUR DATA <<<
    ========================================================= */
 const CV = {
   name: "Ferran Serafini Murio",
   role: "Cyber Security Manager",
-  tagline: "20 años con GNU/Linux casi a diario · seguridad, redes y entornos críticos de alta disponibilidad.",
+  tagline: "20 years of GNU/Linux almost every day · security, networks and critical high-availability environments.",
   about: [
-    "<b>20 años</b> usando GNU/Linux casi a diario. Me divierto con montones de distros (Debian, Gentoo, Arch, Fedora, Red Hat) y otros Unix (FreeBSD, Solaris, HP-UX).",
-    "Durante más de 7 años fui arquitecto de sistemas en <b>ITnow</b>, gestionando el equipo que hace funcionar la infraestructura IT del Homebanking de <b>CaixaBank</b> y formando parte del equipo de ingeniería de Cloud, Red y Seguridad. Hoy trabajo en <b>ciberseguridad</b> en CaixaBank Tech.",
-    "Disfruto jugando <b>CTFs de hacking</b> con buenas puntuaciones en TryHackMe, Atenea... Me gusta la seguridad IT, móvil, redes, alta disponibilidad y los entornos grandes y críticos."
+    "<b>20 years</b> using GNU/Linux almost every day. Having fun with lots of distros (Debian, Gentoo, Arch, Fedora, Red Hat) and other Unixes (FreeBSD, Solaris, HP-UX).",
+    "For over 7 years I was an IT systems architect at <b>ITnow</b>, managing the team that keeps <b>CaixaBank</b>'s home banking IT infrastructure running well, and later part of the Cloud, Network and Security engineering team. Today I work in <b>cybersecurity</b> at CaixaBank Tech.",
+    "I enjoy playing <b>hacking CTFs</b> with high scores on TryHackMe, Atenea... I like working in IT security, mobile, network, high availability, and big, critical environments."
   ],
   stats: [
-    { v: "20+", l: "años con GNU/Linux" },
-    { v: "20+", l: "años en IT" },
-    { v: "5",   l: "certificaciones" }
+    { v: "20+", l: "years with GNU/Linux" },
+    { v: "20+", l: "years in IT" },
+    { v: "5",   l: "certifications" }
   ],
   experience: [
-    { role: "Ingeniero de Ciberseguridad (Excedencia CaixaBank)", company: "CaixaBank Tech", period: "Jul 2026 — Actualidad", place: "",
-      bullets: [], tags: ["Ciberseguridad"] },
-    { role: "Gestor Cyber Security Detect&Prevent", company: "CaixaBank", period: "Ene 2025 — Ago 2026", place: "Barcelona",
+    { role: "Cyber Security Engineer (CaixaBank Leave of Absence)", company: "CaixaBank Tech", period: "Jul 2026 — Present", place: "",
+      bullets: [], tags: ["Cybersecurity"] },
+    { role: "Cyber Security Manager, Detect & Prevent", company: "CaixaBank", period: "Jan 2025 — Aug 2026", place: "Barcelona",
       bullets: [], tags: ["Cyber Security","Detect & Prevent"] },
-    { role: "Arquitecto de LAN & Cloud", company: "ITnow", period: "Nov 2023 — Ene 2025", place: "Barcelona",
-      bullets: ["Parte del equipo de ingeniería de Cloud, Red y Seguridad."], tags: ["Cloud","Network","Security"] },
-    { role: "Arquitecto de sistemas de TI", company: "ITnow", period: "Nov 2017 — Ene 2025", place: "Barcelona",
-      bullets: ["Gestión y apoyo al equipo que mantiene la infraestructura IT del Homebanking de CaixaBank."], tags: ["Arquitectura","Alta disponibilidad","Banca"] },
-    { role: "Consultor de Infraestructura", company: "CleverTask IT Solutions", period: "Feb 2015 — Nov 2017", place: "Barcelona",
-      bullets: [], tags: ["Infraestructura"] },
+    { role: "LAN & Cloud Architect", company: "ITnow", period: "Nov 2023 — Jan 2025", place: "Barcelona",
+      bullets: ["Part of the Cloud, Network and Security engineering team."], tags: ["Cloud","Network","Security"] },
+    { role: "IT Systems Architect", company: "ITnow", period: "Nov 2017 — Jan 2025", place: "Barcelona",
+      bullets: ["Assisted and managed the team that keeps CaixaBank's home banking IT infrastructure running well."], tags: ["Architecture","High availability","Banking"] },
+    { role: "Infrastructure Consultant", company: "CleverTask IT Solutions", period: "Feb 2015 — Nov 2017", place: "Barcelona",
+      bullets: [], tags: ["Infrastructure"] },
     { role: "Linux/Unix/Virtualization SysAdmin (UOC)", company: "NexTReT", period: "Feb 2012 — Feb 2015", place: "",
       bullets: [
-        "Virtualización: pools Citrix XenServer 5.x, clusters VMware ESXi/vSphere, Hyper-V, P2V, blades IBM/HP y consolidación.",
-        "Redes: políticas de firewall (Nokia, Juniper), switching (Cisco/Enterasys), balanceadores, VPN y routing.",
-        "Almacenamiento compartido: EMC Clariion, Celerra, iSCSI, Fibre Channel.",
-        "Correo: operación de servidores Qmail y Postfix."],
+        "Virtualization: Citrix XenServer 5.x pools, VMware ESXi/vSphere clusters, Hyper-V, P2V, IBM/HP blades and consolidation.",
+        "Network infrastructure: firewall policies (Nokia, Juniper), switching (Cisco/Enterasys), load balancers, VPNs, routing.",
+        "Shared storage: EMC Clariion, Celerra, iSCSI, Fibre Channel.",
+        "E-mail servers operations: Qmail, Postfix."],
       tags: ["XenServer","VMware","Juniper","Cisco","EMC","Postfix"] },
-    { role: "IT Systems Administrator (UOC)", company: "Cast-Info", period: "Abr 2010 — Feb 2012", place: "",
-      bullets: ["Virtualización, redes, almacenamiento compartido y operación de servidores de correo para la UOC."],
-      tags: ["Virtualización","Redes","Storage","Correo"] },
-    { role: "Systems Administrator", company: "ESMUC", period: "Sep 2009 — Abr 2010", place: "Barcelona",
-      bullets: ["Clusters HA Novell Xen y SUSE Linux Enterprise Server, Linux-HA (Heartbeat), OES, DNS, DHCP, iPrint, ZENworks, Cacti, Nagios.",
-                "Correo (Postfix + MailScanner + SpamAssassin + ClamAV), Cisco PIX, Squid, DansGuardian, eDirectory, LDAP."],
+    { role: "IT Systems Administrator (UOC)", company: "Cast-Info", period: "Apr 2010 — Feb 2012", place: "",
+      bullets: ["Virtualization, network infrastructure, shared storage and e-mail server operations for UOC."],
+      tags: ["Virtualization","Networks","Storage","Mail"] },
+    { role: "Systems Administrator", company: "ESMUC", period: "Sep 2009 — Apr 2010", place: "Barcelona",
+      bullets: ["Novell Xen open-source HA clusters, SUSE Linux Enterprise Server, Linux-HA (Heartbeat), OES clusters, DNS, DHCP, iPrint, ZENworks, Cacti, Nagios.",
+                "Mail (Postfix + MailScanner + SpamAssassin + ClamAV), Cisco PIX, Squid, DansGuardian, eDirectory, LDAP."],
       tags: ["SUSE","Xen","Linux-HA","Nagios","LDAP"] },
-    { role: "Systems Administrator", company: "Antic Ral 1003, S.L.", period: "Feb 2009 — Dic 2009", place: "",
-      bullets: ["Administrador y consultor GNU/Linux: VMware ESX/vSphere, Cyrus IMAP, OpenLDAP, openSUSE, Postfix, PostgreSQL, Tomcat, Zimbra, GLPI, Kerio, Apache, MySQL, FreeBSD, Gentoo, dominios Windows 2000/2003 y Exchange."],
+    { role: "Systems Administrator", company: "Antic Ral 1003, S.L.", period: "Feb 2009 — Dec 2009", place: "",
+      bullets: ["GNU/Linux administrator and consultant: VMware ESX/vSphere, Cyrus IMAP, OpenLDAP, openSUSE, Postfix, PostgreSQL, Tomcat, Zimbra, GLPI, Kerio, Apache, MySQL, FreeBSD, Gentoo, Windows 2000/2003 domain services, Exchange."],
       tags: ["Linux","FreeBSD","Gentoo","VMware","Zimbra"] },
     { role: "System Engineer", company: "Kemit", period: "2006 — 2009", place: "",
-      bullets: ["Desarrollo de GNU/Linkat2, proyectos Nagios y Cacti, MTAs, Cyrus IMAP, Bind, dhcpd, NTP, LAMP, Horde, Active Directory, VMware, Xen, OES2."],
+      bullets: ["GNU/Linkat2 development, Nagios & Cacti projects, MTAs, Cyrus IMAP, Bind, dhcpd, NTP, LAMP, Horde, Active Directory, VMware, Xen, OES2."],
       tags: ["Linkat","Nagios","Cacti","Bind","Xen"] },
-    { role: "System Administrator", company: "Ingeniería de sistemas aplicables", period: "Ene 2006 — Jun 2006", place: "",
+    { role: "System Administrator", company: "Ingeniería de sistemas aplicables", period: "Jan 2006 — Jun 2006", place: "",
       bullets: [], tags: ["SysAdmin"] },
-    { role: "IT Support", company: "Tech Data", period: "Oct 2005 — Dic 2006", place: "",
-      bullets: [], tags: ["Soporte IT"] }
+    { role: "IT Support", company: "Tech Data", period: "Oct 2005 — Dec 2006", place: "",
+      bullets: [], tags: ["IT Support"] }
   ],
   awards: [
     { title: "Cloudflare Luminary Award 2025", org: "Cloudflare Customer Awards · Connect Las Vegas",
-      text: "Ganador del premio Luminary, que reconoce a líderes regionales destacados que sirven de guía para otros clientes. Reconocimiento por la unificación de la infraestructura IT de CaixaBank sobre la connectivity cloud de Cloudflare.",
-      href: "https://www.cloudflare.com/customer-awards-winners/", linkText: "ver ganadores" }
+      text: "Luminary Award winner, recognizing outstanding regional leaders who serve as a guiding light for other customers. Recognized for unifying CaixaBank's IT infrastructure on Cloudflare's connectivity cloud.",
+      href: "https://www.cloudflare.com/customer-awards-winners/", linkText: "view winners" }
   ],
   skills: [
-    { group: "Seguridad", items: ["Riesgos de ciberseguridad","Diseño de arquitectura de seguridad","Implementación de seguridad en red","Ethical Hacking","CTFs (TryHackMe, Atenea)","Detect & Prevent"] },
-    { group: "Sistemas", items: ["GNU/Linux (Debian, Gentoo, Arch, Fedora, Red Hat)","FreeBSD","Solaris","HP-UX","SUSE / Novell OES","Windows Server"] },
-    { group: "Infra & redes", items: ["VMware","XenServer","Hyper-V","Cisco","Juniper","Nokia","Balanceadores","VPN","iSCSI / Fibre Channel","Nagios","Cacti"] },
-    { group: "Idiomas", items: ["Català","Castellano","English"] }
+    { group: "Security", items: ["Cybersecurity risk","Security architecture design","Network security implementation","Ethical Hacking","CTFs (TryHackMe, Atenea)","Detect & Prevent"] },
+    { group: "Systems", items: ["GNU/Linux (Debian, Gentoo, Arch, Fedora, Red Hat)","FreeBSD","Solaris","HP-UX","SUSE / Novell OES","Windows Server"] },
+    { group: "Infra & networks", items: ["VMware","XenServer","Hyper-V","Cisco","Juniper","Nokia","Load balancers","VPN","iSCSI / Fibre Channel","Nagios","Cacti"] },
+    { group: "Languages", items: ["Catalan","Spanish","English"] }
   ],
   education: [
-    { title: "Informática de gestión, diseño y multimedia", org: "ESERP Business & Law School", period: "2003 — 2006" },
+    { title: "Business Computing, Design & Multimedia", org: "ESERP Business & Law School", period: "2003 — 2006" },
     { title: "Higher National Diploma in Software Engineering", org: "Pearson College London", period: "2003 — 2006" },
-    { title: "Certified Ethical Hacker", org: "Certificación", period: "" },
-    { title: "Novell Certified Linux Professional 10", org: "Certificación", period: "" },
-    { title: "Design and Deployment Specialist — Fundamentals Accreditation", org: "Certificación", period: "" },
-    { title: "Solution Architect Fundamentals Accreditation", org: "Certificación", period: "" },
-    { title: "Account Executive Intermediate Accreditation — Partner", org: "Certificación", period: "" }
+    { title: "Certified Ethical Hacker", org: "Certification", period: "" },
+    { title: "Novell Certified Linux Professional 10", org: "Certification", period: "" },
+    { title: "Design and Deployment Specialist — Fundamentals Accreditation", org: "Certification", period: "" },
+    { title: "Solution Architect Fundamentals Accreditation", org: "Certification", period: "" },
+    { title: "Account Executive Intermediate Accreditation — Partner", org: "Certification", period: "" }
   ],
   links: [
     { label: "LinkedIn", text: "in/ferranserafini", href: "https://www.linkedin.com/in/ferranserafini/" },
     { label: "Email",    text: "fsm.systems@gmail.com", href: "mailto:fsm.systems@gmail.com" }
   ]
 };
-/* ======================= FIN DE LOS DATOS ======================= */
+/* ======================= END OF DATA ======================= */
 
 const $ = s => document.querySelector(s);
 const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -372,16 +372,16 @@ $('#linksBox').innerHTML = CV.links.map(l => `
 
 /* ---------- Boot sequence ---------- */
 const bootLines = [
-  ['<span class="d">[ 0.000 ]</span> iniciando kernel <span class="c">ferran-os 1.0</span>', 250],
-  ['<span class="d">[ 0.412 ]</span> montando perfil ........ <span class="ok">OK</span>', 220],
-  ['<span class="d">[ 0.871 ]</span> cargando experiencia .... <span class="ok">OK</span>', 220],
-  ['<span class="d">[ 1.203 ]</span> compilando skills ....... <span class="ok">OK</span>', 220],
-  ['<span class="d">[ 1.640 ]</span> firewall ................ <span class="warn">ACTIVO</span>', 220],
+  ['<span class="d">[ 0.000 ]</span> booting kernel <span class="c">ferran-os 1.0</span>', 250],
+  ['<span class="d">[ 0.412 ]</span> mounting profile ........ <span class="ok">OK</span>', 220],
+  ['<span class="d">[ 0.871 ]</span> loading experience ....... <span class="ok">OK</span>', 220],
+  ['<span class="d">[ 1.203 ]</span> compiling skills ......... <span class="ok">OK</span>', 220],
+  ['<span class="d">[ 1.640 ]</span> firewall ................ <span class="warn">ACTIVE</span>', 220],
   ['<span class="k">$</span> sudo ./whoami --verbose', 500]
 ];
 const boot = $('#boot'), ident = $('#identity');
 function showIdentity(){
-  boot.innerHTML += '<div class="line"><span class="ok">acceso concedido</span> <span class="cursor"></span></div>';
+  boot.innerHTML += '<div class="line"><span class="ok">access granted</span> <span class="cursor"></span></div>';
   ident.style.display = 'block';
 }
 (async function run(){
@@ -433,15 +433,15 @@ const out = $('#shOut'), inp = $('#shIn');
 const print = html => { const d = document.createElement('div'); d.className = 'line'; d.innerHTML = html; out.appendChild(d); out.scrollTop = out.scrollHeight; };
 const go = id => { document.getElementById(id).scrollIntoView({behavior: reduce ? 'auto' : 'smooth'}); };
 const cmds = {
-  help: () => print('comandos: <span class="c">whoami · experience · skills · education · contact · linkedin · clear · sudo</span>'),
+  help: () => print('commands: <span class="c">whoami · experience · skills · education · contact · linkedin · clear · sudo</span>'),
   whoami: () => { print(esc(CV.name) + ' — ' + esc(CV.role)); go('about'); },
-  experience: () => { print('abriendo experience.log ...'); go('experience'); },
-  skills: () => { print('compilando skills ...'); go('skills'); },
-  education: () => { print('leyendo diplomas ...'); go('education'); },
-  contact: () => { print('canal seguro abierto.'); go('contact'); },
-  linkedin: () => { print('redirigiendo ...'); open(CV.links[0].href, '_blank', 'noopener'); },
+  experience: () => { print('opening experience.log ...'); go('experience'); },
+  skills: () => { print('compiling skills ...'); go('skills'); },
+  education: () => { print('reading diplomas ...'); go('education'); },
+  contact: () => { print('secure channel open.'); go('contact'); },
+  linkedin: () => { print('redirecting ...'); open(CV.links[0].href, '_blank', 'noopener'); },
   clear: () => { out.innerHTML = ''; },
-  sudo: () => print('<span class="warn">nice try.</span> este incidente será reportado 😉'),
+  sudo: () => print('<span class="warn">nice try.</span> this incident will be reported 😉'),
   ls: () => print('about/  experience/  skills/  education/  contact/'),
 };
 $('#shForm').addEventListener('submit', e => {
@@ -449,7 +449,7 @@ $('#shForm').addEventListener('submit', e => {
   const v = inp.value.trim(); inp.value = ''; if (!v) return;
   print('<span class="k">$</span> ' + esc(v));
   const key = v.toLowerCase().split(/\s+/)[0];
-  (cmds[key] || (() => print('<span class="warn">comando no encontrado:</span> ' + esc(key) + ' (prueba <span class="c">help</span>)')))();
+  (cmds[key] || (() => print('<span class="warn">command not found:</span> ' + esc(key) + ' (try <span class="c">help</span>)')))();
 });
 </script>
 </body>
