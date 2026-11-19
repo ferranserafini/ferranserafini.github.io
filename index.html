@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ferran Serafini // CV</title>
-<meta name="description" content="Ferran Serafini — currículum interactivo.">
+<title>Ferran Serafini Murio // CV</title>
+<meta name="description" content="Ferran Serafini Murio — Cyber Security Manager. Currículum interactivo.">
 <meta name="theme-color" content="#05060d">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -60,7 +60,7 @@ header.hero{min-height:88vh;display:flex;align-items:center;padding:60px 0}
 .cursor{display:inline-block;width:9px;height:1.1em;background:var(--green);vertical-align:text-bottom;margin-left:2px;animation:blink 1s steps(2) infinite;box-shadow:0 0 8px var(--green)}
 @keyframes blink{50%{opacity:0}}
 
-.glitch{font-family:var(--display);font-weight:900;font-size:clamp(34px,8vw,76px);line-height:1.05;color:#fff;position:relative;display:inline-block;margin:14px 0 6px;
+.glitch{font-family:var(--display);font-weight:900;font-size:clamp(30px,6.4vw,58px);line-height:1.05;color:#fff;position:relative;display:inline-block;margin:14px 0 6px;
   text-shadow:0 0 6px var(--cyan),0 0 22px var(--cyan),0 0 48px rgba(0,240,255,.5)}
 .glitch::before,.glitch::after{content:attr(data-text);position:absolute;left:0;top:0;width:100%;overflow:hidden}
 .glitch::before{color:#ffe600;text-shadow:none;animation:g1 3.2s infinite linear alternate-reverse;clip-path:inset(0 0 55% 0)}
@@ -109,6 +109,16 @@ h2::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,var(--ma
 .tag.c{border-color:rgba(0,240,255,.5);color:var(--cyan);background:rgba(0,240,255,.07)}
 .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
 .tag{font-size:11px;padding:2px 9px;border:1px solid rgba(255,43,214,.5);color:var(--magenta);border-radius:20px;background:rgba(255,43,214,.07)}
+
+/* AWARDS */
+.award{display:flex;gap:22px;align-items:flex-start;border-color:rgba(255,184,0,.6);box-shadow:0 0 26px rgba(255,184,0,.18),inset 0 0 30px rgba(255,184,0,.05);margin-bottom:16px}
+.award:hover{border-color:var(--amber);box-shadow:0 0 36px rgba(255,184,0,.4)}
+.award::before,.award::after{border-color:var(--amber);filter:drop-shadow(0 0 4px var(--amber))}
+.award .ico{font-size:44px;line-height:1;filter:drop-shadow(0 0 12px var(--amber))}
+.award h3{color:#fff;font-size:18px}
+.award .org{color:var(--amber);font-size:13px;margin:2px 0 8px}
+.award a.more{display:inline-block;margin-top:10px;font-size:12px}
+@media (max-width:640px){.award{flex-direction:column;gap:10px}}
 
 /* SKILLS */
 .skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
@@ -164,6 +174,7 @@ footer b{color:var(--magenta)}
     <ul>
       <li><a href="#about">about</a></li>
       <li><a href="#experience">experience</a></li>
+      <li><a href="#awards">awards</a></li>
       <li><a href="#skills">skills</a></li>
       <li><a href="#education">education</a></li>
       <li><a href="#contact">contact</a></li>
@@ -178,7 +189,7 @@ footer b{color:var(--magenta)}
       <div class="term-body">
         <div id="boot"></div>
         <div id="identity" style="display:none">
-          <h1 class="glitch" id="name" data-text="">FERRAN SERAFINI</h1>
+          <h1 class="glitch" id="name" data-text="">FERRAN SERAFINI MURIO</h1>
           <div class="role" id="role"></div>
           <div class="line"><span class="d" id="tagline"></span></div>
           <div class="cta">
@@ -200,18 +211,23 @@ footer b{color:var(--magenta)}
     <div class="timeline" id="jobs"></div>
   </section>
 
+  <section id="awards" class="reveal">
+    <h2><span class="n">03//</span>awards.txt</h2>
+    <div id="awardsBox"></div>
+  </section>
+
   <section id="skills" class="reveal">
-    <h2><span class="n">03//</span>skills.sh</h2>
+    <h2><span class="n">04//</span>skills.sh</h2>
     <div class="skills" id="skillsBox"></div>
   </section>
 
   <section id="education" class="reveal">
-    <h2><span class="n">04//</span>education &amp; certs</h2>
+    <h2><span class="n">05//</span>education &amp; certs</h2>
     <div class="grid2" id="eduBox"></div>
   </section>
 
   <section id="contact" class="reveal">
-    <h2><span class="n">05//</span>contact</h2>
+    <h2><span class="n">06//</span>contact</h2>
     <div class="links" id="linksBox"></div>
 
     <div class="card shell">
@@ -236,7 +252,7 @@ footer b{color:var(--magenta)}
    >>> EDITA SOLO ESTE BLOQUE CON TUS DATOS <<<
    ========================================================= */
 const CV = {
-  name: "Ferran Serafini",
+  name: "Ferran Serafini Murio",
   role: "Cyber Security Manager",
   tagline: "20 años con GNU/Linux casi a diario · seguridad, redes y entornos críticos de alta disponibilidad.",
   about: [
@@ -285,6 +301,11 @@ const CV = {
     { role: "IT Support", company: "Tech Data", period: "Oct 2005 — Dic 2006", place: "",
       bullets: [], tags: ["Soporte IT"] }
   ],
+  awards: [
+    { title: "Cloudflare Luminary Award 2025", org: "Cloudflare Customer Awards · Connect Las Vegas",
+      text: "Ganador del premio Luminary, que reconoce a líderes regionales destacados que sirven de guía para otros clientes. Reconocimiento por la unificación de la infraestructura IT de CaixaBank sobre la connectivity cloud de Cloudflare.",
+      href: "https://www.cloudflare.com/customer-awards-winners/", linkText: "ver ganadores" }
+  ],
   skills: [
     { group: "Seguridad", items: ["Riesgos de ciberseguridad","Diseño de arquitectura de seguridad","Implementación de seguridad en red","Ethical Hacking","CTFs (TryHackMe, Atenea)","Detect & Prevent"] },
     { group: "Sistemas", items: ["GNU/Linux (Debian, Gentoo, Arch, Fedora, Red Hat)","FreeBSD","Solaris","HP-UX","SUSE / Novell OES","Windows Server"] },
@@ -330,6 +351,12 @@ $('#jobs').innerHTML = CV.experience.map(j => `
     ${j.bullets.length ? `<ul>${j.bullets.map(b => `<li>${esc(b)}</li>`).join('')}</ul>` : ''}
     <div class="tags">${j.tags.map(t => `<span class="tag">${esc(t)}</span>`).join('')}</div>
   </article>`).join('');
+
+$('#awardsBox').innerHTML = CV.awards.map(a => `
+  <article class="card award"><div class="ico">🏆</div><div>
+    <h3>${esc(a.title)}</h3><div class="org">${esc(a.org)}</div><p>${esc(a.text)}</p>
+    <a class="more" href="${esc(a.href)}" target="_blank" rel="noopener">&gt; ${esc(a.linkText)}</a>
+  </div></article>`).join('');
 
 $('#skillsBox').innerHTML = CV.skills.map(g => `
   <div class="card">
