@@ -120,6 +120,20 @@ h2::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,var(--ma
 .award a.more{display:inline-block;margin-top:10px;font-size:12px}
 @media (max-width:640px){.award{flex-direction:column;gap:10px}}
 
+/* GROUP: CAIXABANK */
+.grp{position:relative;margin:0 0 26px -14px;padding:14px 0 1px 14px;border-left:3px solid var(--green);
+  background:linear-gradient(90deg,rgba(57,255,20,.07),transparent 70%);box-shadow:-8px 0 22px -10px var(--green);border-radius:0 6px 6px 0}
+.grp .job::before{left:-40px}
+.grp-h{margin:0 0 18px;padding-right:10px}
+.grp-t{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 16px}
+.grp-n{font-family:var(--display);font-size:20px;color:#fff;text-shadow:0 0 10px var(--green),0 0 24px rgba(57,255,20,.5)}
+.grp-y{font-family:var(--display);font-size:13px;color:#000;background:var(--green);padding:2px 10px;border-radius:2px;box-shadow:0 0 14px var(--green)}
+.grp-p{font-size:12px;color:var(--amber)}
+.grp-path{margin-top:6px;font-size:12px;color:var(--cyan)}
+.grp-path i{color:var(--green);font-style:normal}
+.grp-d{margin-top:4px;font-size:12px;color:var(--dim)}
+@media (max-width:640px){.grp{margin-left:-8px;padding-left:8px}.grp .job::before{left:-34px}}
+
 /* SKILLS */
 .skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
 .skills h3{color:var(--cyan);font-size:14px;margin-bottom:14px;text-transform:uppercase;letter-spacing:.12em}
@@ -265,16 +279,23 @@ const CV = {
     { v: "20+", l: "years in IT" },
     { v: "5",   l: "certifications" }
   ],
+  groups: {
+    caixabank: {
+      label: "CaixaBank", since: [2015, 2], period: "Feb 2015 — Present",
+      path: ["CleverTask", "ITnow", "CaixaBank", "CaixaBank Tech"],
+      text: "Every role below has been spent working for CaixaBank, through different companies."
+    }
+  },
   experience: [
-    { role: "Cyber Security Engineer (CaixaBank Leave of Absence)", company: "CaixaBank Tech", period: "Jul 2026 — Present", place: "",
+    { group: "caixabank", role: "Cyber Security Engineer (CaixaBank Leave of Absence)", company: "CaixaBank Tech", period: "Jul 2026 — Present", place: "",
       bullets: [], tags: ["Cybersecurity"] },
-    { role: "Cyber Security Manager, Detect & Prevent", company: "CaixaBank", period: "Jan 2025 — Aug 2026", place: "Barcelona",
+    { group: "caixabank", role: "Cyber Security Manager, Detect & Prevent", company: "CaixaBank", period: "Jan 2025 — Aug 2026", place: "Barcelona",
       bullets: [], tags: ["Cyber Security","Detect & Prevent"] },
-    { role: "LAN & Cloud Architect", company: "ITnow", period: "Nov 2023 — Jan 2025", place: "Barcelona",
+    { group: "caixabank", role: "LAN & Cloud Architect", company: "ITnow", period: "Nov 2023 — Jan 2025", place: "Barcelona",
       bullets: ["Part of the Cloud, Network and Security engineering team."], tags: ["Cloud","Network","Security"] },
-    { role: "IT Systems Architect", company: "ITnow", period: "Nov 2017 — Jan 2025", place: "Barcelona",
+    { group: "caixabank", role: "IT Systems Architect", company: "ITnow", period: "Nov 2017 — Jan 2025", place: "Barcelona",
       bullets: ["Assisted and managed the team that keeps CaixaBank's home banking IT infrastructure running well."], tags: ["Architecture","High availability","Banking"] },
-    { role: "Infrastructure Consultant", company: "CleverTask IT Solutions", period: "Feb 2015 — Nov 2017", place: "Barcelona",
+    { group: "caixabank", role: "Infrastructure Consultant", company: "CleverTask IT Solutions", period: "Feb 2015 — Nov 2017", place: "Barcelona",
       bullets: [], tags: ["Infrastructure"] },
     { role: "Linux/Unix/Virtualization SysAdmin (UOC)", company: "NexTReT", period: "Feb 2012 — Feb 2015", place: "",
       bullets: [
@@ -340,17 +361,38 @@ $('#tagline').textContent = CV.tagline;
 document.title = CV.name + " // CV";
 $('#year').textContent = new Date().getFullYear();
 
+const yearsSince = ([y, m]) => { const n = new Date(); return Math.floor((n.getFullYear() - y) + (n.getMonth() + 1 - m) / 12); };
+const CB = CV.groups.caixabank, CB_YEARS = yearsSince(CB.since);
+CV.stats.splice(1, 0, { v: CB_YEARS + '+', l: 'years serving CaixaBank' });
+
 $('#aboutBox').innerHTML =
   CV.about.map(p => `<p>${p}</p>`).join('') +
   `<div class="stats">${CV.stats.map(s => `<div class="stat"><div class="v">${esc(s.v)}</div><div class="l">${esc(s.l)}</div></div>`).join('')}</div>`;
 
-$('#jobs').innerHTML = CV.experience.map(j => `
+const jobHtml = j => `
   <article class="job card">
     <h3>${esc(j.role)} <span class="at">@ ${esc(j.company)}</span></h3>
     <div class="meta"><span class="per">${esc(j.period)}</span>${j.place ? ' · ' + esc(j.place) : ''}</div>
     ${j.bullets.length ? `<ul>${j.bullets.map(b => `<li>${esc(b)}</li>`).join('')}</ul>` : ''}
     <div class="tags">${j.tags.map(t => `<span class="tag">${esc(t)}</span>`).join('')}</div>
-  </article>`).join('');
+  </article>`;
+const grpHtml = (key, jobs) => { const g = CV.groups[key]; return `
+  <div class="grp">
+    <div class="grp-h">
+      <div class="grp-t"><span class="grp-n">${esc(g.label)}</span><span class="grp-y">${yearsSince(g.since)}+ YEARS</span><span class="grp-p">${esc(g.period)}</span></div>
+      <div class="grp-path">${g.path.map(esc).join(' <i>&rarr;</i> ')}</div>
+      <div class="grp-d">${esc(g.text)}</div>
+    </div>
+    ${jobs.map(jobHtml).join('')}
+  </div>`; };
+let jobsOut = '', buf = [], cur = null;
+const flush = () => { if (buf.length) jobsOut += grpHtml(cur, buf); buf = []; cur = null; };
+CV.experience.forEach(j => {
+  if (j.group) { if (cur !== j.group) flush(); cur = j.group; buf.push(j); }
+  else { flush(); jobsOut += jobHtml(j); }
+});
+flush();
+$('#jobs').innerHTML = jobsOut;
 
 $('#awardsBox').innerHTML = CV.awards.map(a => `
   <article class="card award"><div class="ico">🏆</div><div>
